@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Serviços</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Serviços Cadastrados</h1>
+    
+    <!-- Exibe mensagens flash (ex: sucesso, erro) -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Botão para criar um novo serviço -->
+    <a class="btn" href="{{ url_for('services.create_service') }}">+ Novo Serviço</a>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for service in services %}
+        <tr>
+          <td>{{ service.id }}</td>
+          <td>{{ service.name }}</td>
+          <td>{{ service.description }}</td>
+          <td>R$ {{ "%.2f" | format(service.price) }}</td> <!-- Formata o preço para 2 casas decimais -->
+          <td>
+            <!-- Editar -->
+            <a href="{{ url_for('services.edit_service_route', service_id=service.id) }}">Editar</a>
+
+            <!-- Excluir -->
+            <form action="{{ url_for('services.delete_service_route', service_id=service.id) }}" method="POST" style="display:inline;">
+              <button type="submit" onclick="return confirm('Tem certeza que deseja excluir o serviço: {{ service.name }}?')">Excluir</button>
+            </form>
+          </td>
+        </tr>
+      {% else %}
+        <tr><td colspan="5">Nenhum serviço cadastrado.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

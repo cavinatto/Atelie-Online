@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Serviço</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Criar Novo Serviço</h1>
+
+    <!-- Exibe mensagens flash -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('services.create_service') }}">
+      <label for="name">Nome</label>
+      <input id="name" name="name" placeholder="Digite o nome do serviço" required>
+
+      <label for="description">Descrição</label>
+      <textarea id="description" name="description" placeholder="Descrição detalhada do serviço"></textarea>
+
+      <label for="price">Preço</label>
+      <input id="price" name="price" type="number" step="0.01" placeholder="0.00" required>
+
+      <button type="submit">Salvar</button>
+      <a href="{{ url_for('services.services_list') }}">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>
