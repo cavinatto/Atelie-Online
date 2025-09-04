@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Serviços Cadastrados</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente</th>
+      <th>Tipo</th>
+      <th>Descrição</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for s in servicos %}
+    <tr>
+      <td>{{ s.id }}</td>
+      <td>{{ s.nome_cliente }}</td>
+      <td>{{ s.tipo_servico }}</td>
+      <td>{{ s.descricao }}</td>
+      <td>
+        <form action="{{ url_for('servico.excluir_servico', id=s.id) }}" method="POST" style="display:inline;">
+          <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este serviço?')">Excluir</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{{ url_for('servico.cadastrar_servico') }}">Cadastrar novo serviço</a>
+{% endblock %}
