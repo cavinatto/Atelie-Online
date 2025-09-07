@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from atelie_online.models.servico_model import Servico
 from atelie_online.models import db
 
-servico_bp = Blueprint('servico', __name__)
+servico_bp = Blueprint('servico', __name__, template_folder='../templates')
 
 @servico_bp.route('/')
 def index():

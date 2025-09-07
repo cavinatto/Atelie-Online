@@ -3,15 +3,17 @@ from atelie_online.config import Config
 from atelie_online.models import db
 from atelie_online.controllers.servico_controller import servico_bp
 
+
+
 def create_app():
-    app = Flask(__name__, 
-                template_folder="templates",
-                static_folder="static")
+
+    
+    app = Flask(__name__, template_folder="atelie_online/templates")
+    
     app.config.from_object(Config)
 
     db.init_app(app)
 
-    # registrar blueprints
     app.register_blueprint(servico_bp)
 
     with app.app_context():

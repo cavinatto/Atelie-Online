@@ -30,10 +30,12 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/usr/src/app
+      - .:/app
     environment:
       DATABASE_URL: mysql+pymysql://atelie_user:atelie_pass@db:3306/atelie
       FLASK_ENV: development
 
 volumes:
   db_data:
+
+#docker-compose.yaml
