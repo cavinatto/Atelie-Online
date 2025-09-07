@@ -1,0 +1,39 @@
+services:
+  db:
+    container_name: db
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Enzo39824360
+      MYSQL_DATABASE: atelie
+      MYSQL_USER: atelie_user
+      MYSQL_PASSWORD: atelie_pass
+      MYSQL_ROOT_HOST: '%'
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      retries: 10
+      timeout: 3s
+
+  web:
+    container_name: web
+    build: .
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      DATABASE_URL: mysql+pymysql://atelie_user:atelie_pass@db:3306/atelie
+      FLASK_ENV: development
+
+volumes:
+  db_data:

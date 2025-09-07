@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from models.servico_model import Servico
-from models import db
+from atelie_online.models.servico_model import Servico
+from atelie_online.models import db
 
 servico_bp = Blueprint('servico', __name__)
 
@@ -35,3 +35,4 @@ def excluir_servico(id):
     db.session.commit()
     flash('Serviço excluído com sucesso!', 'success')
     return redirect(url_for('servico.listar_servicos'))
+#atelie_online/controllers/servico_controller.py
