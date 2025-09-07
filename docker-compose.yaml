@@ -30,7 +30,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./atelie_online:/app
+      - .:/usr/src/app
     environment:
       DATABASE_URL: mysql+pymysql://atelie_user:atelie_pass@db:3306/atelie
       FLASK_ENV: development
