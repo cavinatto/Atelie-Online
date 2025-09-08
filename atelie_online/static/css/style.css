@@ -107,7 +107,7 @@ button.out:active {
 
 nav {
   margin-top: 0.5rem;
-  display: inline-block; /* faz o nav ocupar só o necessário */
+  display: inline-block; 
   text-align: center;
   
 }
