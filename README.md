@@ -60,8 +60,13 @@ Siga os passos abaixo para rodar o projeto na sua máquina:
 ````bash
 git clone https://github.com/seu-usuario/atelie-online.git
 ````
-## Pasta do Projeto
+## 2. 📂 Pasta do Projeto
 cd atelie-online
+
+## 3. 💻 Crie um ambiente Virtual
+python -m venv venv
+
+## 4. 
 
 ## Instale as dependências
 pip install -r requirements.txt
