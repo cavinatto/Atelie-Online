@@ -1,21 +1,21 @@
 services:
   db:
     container_name: db
-    image: mysql:8.0
+    image: postgres:14-alpine
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Enzo39824360
-      MYSQL_DATABASE: atelie
-      MYSQL_USER: atelie_user
-      MYSQL_PASSWORD: atelie_pass
-      MYSQL_ROOT_HOST: '%'
-    command: --default-authentication-plugin=mysql_native_password
+      #atenção estva POSTGRESL,  e é sem L  no final
+      POSTGRES_DB: atelie
+      POSTGRES_USER: atelie_user
+      POSTGRES_PASSWORD: atelie_pass
+      
+    #command: --default-authentication-plugin=mysql_native_password
     ports:
-      - "3307:3306"
+      - "5432:5432"
     volumes:
-      - db_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "pg_isready -U atelie_user -d atelie"]
       interval: 5s
       retries: 10
       timeout: 3s
@@ -32,10 +32,16 @@ services:
     volumes:
       - .:/app
     environment:
-      DATABASE_URL: mysql+pymysql://atelie_user:atelie_pass@db:3306/atelie
+    # Mostra qual database da api o sqlalchemy deve importar, neste caso será bd postgres e psycop2
+      DATABASE_URL: postgresql+psycopg2://atelie_user:atelie_pass@db:5432/atelie
       FLASK_ENV: development
 
 volumes:
-  db_data:
+  postgres_data:
+    driver: local
 
 #docker-compose.yaml
+
+#psycopg2 - drive oficial que conecta .py ao postgres. Gera instruções como CREATE TABLE, por exemplo. 
+#DBAPI é Database da api - padrão .py PEP249, define como as bibliotecas de banco de dados irão se comportar (connect(), cursor() - prepara os comandos SQL, execute(), fetchone()/ fetchall() - busca resultados, é como um interface)
+#DBAPI Drive é a biblioteca, é aponte entre .py e banco de dados
