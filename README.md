@@ -66,7 +66,44 @@ cd atelie-online
 ## 3. 💻 Crie um ambiente Virtual
 python -m venv venv
 
-## 4. 
+## 4. ⚡ Ative o ambiente virtual
 
-## Instale as dependências
+- Windows:
+
+venv\Scripts\activate
+
+
+- Linux/Mac:
+
+source venv/bin/activate
+
+## 5. ⬇️ Instale as dependências
 pip install -r requirements.txt
+
+## 6. ⚙️ Configure o banco de dados PostgreSQL
+
+- Crie um banco de dados no PostgreSQL:
+
+Atualize as credenciais de conexão no arquivo app.py ou em um .env.
+
+## 7. 🚀 Execute a aplicação
+flask run
+
+## 📌 Status do Projeto
+
+# Em desenvolvimento 🚧
+Algumas funcionalidades ainda estão sendo implementadas.
+
+## 🤝 Contribuição
+
+# Se quiser contribuir com o projeto:
+
+- 1. Faça um fork do repositório.
+
+- 2. Crie uma branch com a sua feature (git checkout -b minha-feature).
+
+- 3. Commit suas alterações (git commit -m 'Adicionei uma nova feature').
+
+- 4. Envie para o repositório remoto (git push origin minha-feature).
+
+- 5. Abra um Pull Request.
