@@ -84,26 +84,26 @@ pip install -r requirements.txt
 
 - Crie um banco de dados no PostgreSQL:
 
-Atualize as credenciais de conexão no arquivo app.py ou em um .env.
+- Atualize as credenciais de conexão no arquivo app.py ou em um .env.
 
 ## 7. 🚀 Execute a aplicação
 flask run
 
 ## 📌 Status do Projeto
 
-# Em desenvolvimento 🚧
+- **Em desenvolvimento** 🚧
 Algumas funcionalidades ainda estão sendo implementadas.
 
 ## 🤝 Contribuição
 
 # Se quiser contribuir com o projeto:
 
-- 1. Faça um fork do repositório.
+- . **Faça um fork do repositório.**
 
-- 2. Crie uma branch com a sua feature (git checkout -b minha-feature).
+- . **Crie uma branch com a sua feature (git checkout -b minha-feature).**
 
-- 3. Commit suas alterações (git commit -m 'Adicionei uma nova feature').
+- . **Commit suas alterações (git commit -m 'Adicionei uma nova feature').**
 
-- 4. Envie para o repositório remoto (git push origin minha-feature).
+- . **Envie para o repositório remoto (git push origin minha-feature).**
 
-- 5. Abra um Pull Request.
+- . **Abra um Pull Request.**
