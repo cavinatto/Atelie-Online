@@ -2,6 +2,8 @@ from flask import Flask
 from atelie_online.config import Config
 from atelie_online.models import db
 from atelie_online.controllers.servico_controller import servico_bp
+from atelie_online.controllers.cliente_controller import cliente_bp
+from atelie_online.controllers.cliente_controller import auth_bp
 #Biblioteca para pegar time.sleep() - "delay"
 import time
 #OparationlError = tratar erros de exceção
@@ -20,6 +22,9 @@ def create_app():
     db.init_app(app)
 
     app.register_blueprint(servico_bp)
+    app.register_blueprint(cliente_bp)
+    app.register_blueprint(auth_bp)
+
 
     #app_context() -> contexto de aplicação/application context, bloco do app flask ativo, permmite acesso às variáveis e seus resucros
     with app.app_context():
