@@ -3,31 +3,56 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url('../img/pexels-alex-green-6625828.jpg') no-repeat center center fixed; 
+  background: url('../img/img_main.jpg') no-repeat center center fixed; 
   background-size: cover; 
 }
 
 
 header {
-  background: #240046;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #49423C;
   padding: 1rem;
   text-align: center;
+  position: relative;
+  top: 30px;
+  width: clamp(180px, 50%, 410px);
+  height: 38px;
+  /*sem virgula entre os valores esq dire dire esq*/
+  border-radius: 0px 30px 30px 0px;
+  text-align: left;
+  /*x, y, blurn, larg cor - insert para por dentro do obj*/
+  /*ex: box-shadow: 2px 7px 9px 1px #858585, inset 2px 7px 9px #858585;*/
+  box-shadow: inset 2px 7px 9px #858585;
+  
 }
 
+.logo{
+  height: 100%;
+  margin: 0.4rem;
+  margin-left: -6px;
+  margin-right: 23px;
+  /* aumenta 160% já que 100% é pequeno*/
+  transform: scale(1.6); 
+  /* fixa o lado esq e cresce para o centro, algo assim */
+  transform-origin: left center; 
+}
 
-
+/*base menu edit_txt*/
 form {
   max-width: 400px;
   margin: 2rem auto;
   background: rgba(255,255,255,0.9); 
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 30px;
 }
 
 label {
   display: block;
   margin-top: 1rem;
+  
 }
 
 input, textarea {

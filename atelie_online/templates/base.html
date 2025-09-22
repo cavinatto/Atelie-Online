@@ -8,7 +8,11 @@
 </head>
 <body>
   <header>
-      <h1>Ateliê Online</h1>
+      <img src="{{ url_for('static', filename='img/logoatelie.png') }}" alt="Logo" class="logo">
+      <div class="header_text" id="header_text">
+          <!--texto do bd/js id funcionário-->
+      </div>
+        
   <nav>
     <a href="{{ url_for('servico.cadastrar_servico') }}">Cadastrar Serviço</a> |
     <a href="{{ url_for('servico.listar_servicos') }}">Ver Serviços</a>
