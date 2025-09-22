@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header class="header_principal">
+        <div class="header_logo">
+            <img class="logo" src="{{ url_for('static', filename='img/logoatelie.png') }}" alt="Logo Ateliê Online" />
+            <h1 class="header_txt_Bem">Cadastro</h1>
+        </div>
+    <div class="form_container cadastro">
+        <h2>Cadastro</h2>
+        <form action="{{ url_for('cadastro') }}" method="POST">
+            <input type="text" name="nome" placeholder="Nome">
+            <input type="password" name="senha" placeholder="Senha">
+            <input type="text" name="telefone" placeholder="Telefone">
+            <input type="text" name="rua" placeholder="Rua">
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+{% endblock %}
+
+ <!-- atelie_online/template/cadastro.html -->
+
+ 

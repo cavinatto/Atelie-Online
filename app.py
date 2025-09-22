@@ -3,7 +3,7 @@ from atelie_online.config import Config
 from atelie_online.models import db
 from atelie_online.controllers.servico_controller import servico_bp
 from atelie_online.controllers.cliente_controller import cliente_bp
-from atelie_online.controllers.cliente_controller import auth_bp
+from atelie_online.controllers.auth_controller import auth_bp
 #Biblioteca para pegar time.sleep() - "delay"
 import time
 #OparationlError = tratar erros de exceção
