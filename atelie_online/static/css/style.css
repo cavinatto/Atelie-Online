@@ -3,8 +3,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url('../img/img_main.jpg') no-repeat center center fixed; 
+  background: url('../img/adm.jpg') no-repeat center 25%; 
   background-size: cover; 
+  color: #5b524b;
 }
 
 
@@ -13,7 +14,7 @@ header {
   align-items: center;
   justify-content: center;
   background: #ffffff;
-  color: #49423C;
+  color: #5b524b;
   padding: 1rem;
   text-align: center;
   position: relative;
@@ -25,7 +26,7 @@ header {
   text-align: left;
   /*x, y, blurn, larg cor - insert para por dentro do obj*/
   /*ex: box-shadow: 2px 7px 9px 1px #858585, inset 2px 7px 9px #858585;*/
-  box-shadow: inset 2px 7px 9px #858585;
+  box-shadow: inset 0px 5px 9px -3px #858585;
   
 }
 
@@ -43,10 +44,12 @@ header {
 /*base menu edit_txt*/
 form {
   max-width: 400px;
-  margin: 2rem auto;
-  background: rgba(255,255,255,0.9); 
+  margin: 3rem 30rem 1rem auto;
+  background: rgba(255,255,255); 
   padding: 2rem;
   border-radius: 30px;
+  box-shadow: inset 0px 5px 9px -3px #858585;
+
 }
 
 label {
@@ -59,30 +62,43 @@ input, textarea {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.5rem;
+  border-radius: 12px;
+  border: 0.5px solid #ECEBE7;
+  
+  
+  
 }
 
-
+/* Cadastrar normal */
 button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 12px;
   background: #f6f5f5;
-  box-shadow: 2px 4px 5px #b4b4b4, -2px -2px 5px #d6d6d6;
+  box-shadow: 0px 5px 9px -3px #858585;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  color: #5b524b;
 }
 
+/* mouse*/
 button:hover {
   transform: translateY(-2px);
+  color: #D94E2A;
 }
 
+/* apertado*/
 button:active {
-  box-shadow: inset 6px 6px 12px #d9d9d9, inset -6px -6px 12px #ffffff;
+  color: #5b524b; 
+  background: #f6f5f5; 
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  /* tira o “sobe” do hover */
+  transform: translateY(0); 
 }
 
-
+/*animação entrar e sair*/
 button.out {
   margin-top: 100vh; 
   animation: entrar 2s forwards ease-in-out;
@@ -95,7 +111,7 @@ button.out {
 
 button.out:active {
   animation: sair 2s forwards ease-in-out;
-  box-shadow: inset 6px 6px 12px #d9d9d9, inset -6px -6px 12px #ffffff;
+  box-shadow: 0px 5px 9px -3px #858585;;
 }
 
 @keyframes sair {
@@ -103,74 +119,83 @@ button.out:active {
   100% { margin-top: 100vh; }
 }
 
-/*btn lista_serv*/
-.button {
-  display: inline-block;
-  margin-top: 1rem;
+/*cad_serv*/
+.btn_cad_serv {
+  width: clamp(180px, 50%, 160px);
+  margin-top: 0.5rem;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 12px;
   background: #f6f5f5;
-  box-shadow: 2px 4px 5px #b4b4b4, -2px -2px 5px #d6d6d6;
+  box-shadow: 0px 5px 9px -3px #858585;
   font-size: 1rem;
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-align: center;
+  color: #5b524b;
+  
 }
 
-.button:hover {
+.btn_cad_serv:hover {
   transform: translateY(-2px);
+  color: #D94E2A;
+  
 }
 
-.button:active {
-  box-shadow: inset 6px 6px 12px #d9d9d9, inset -6px -6px 12px #ffffff;
+.btn_cad_serv:active {
+  color: #5b524b; 
+  background: #f6f5f5; 
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  transform: translateY(0); 
 }
 
-
+/*cad_sev e ver ser juntos*/
 nav {
-  margin-top: 0.5rem;
+  margin-top: 9rem;
   display: inline-block; 
   text-align: center;
   
 }
 
 nav a {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-right: 0.7rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
   border-radius: 12px;
-  background: #f7f5f5;
-  box-shadow: 2px 4px 12px #030006, -2px -2px 12px #7a4a87;
-  text-decoration: none;
-  color: #3d5261;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  background: #ffffff;
+  box-shadow: 0px 5px 9px -3px #858585;
+  font-size: 1rem;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  color: #5b524b;
+  text-decoration: none;
+ 
 }
 
 nav a:hover {
   transform: translateY(-2px);
+  color: #D94E2A;;
 }
 
 nav a:active {
-  box-shadow: inset 6px 6px 12px #d9d9d9, inset -6px -6px 12px #ffffff;
+  color: #5b524b; 
+  background: #f6f5f5; 
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  /* tira o “sobe” do hover */
+  transform: translateY(0);
 }
 
 main h2 {
   text-align: center;   /* centraliza */
-  margin-top: 3rem;     /* desce o texto */
+  margin: 3rem -21rem 1rem auto;
   margin-bottom: 1rem;  /* espaço entre o texto e o form */
-  color: #030303;          /* ajusta a cor se quiser */
+  color: #5b524b;          /* ajusta a cor se quiser */
 }
-/* --- TABELA --- */
+
+/*tabela*/
 table {
   width: 90%;
-  margin: 1rem auto;
+  margin: 4rem auto;
   border-collapse: collapse;
   background: rgba(255, 255, 255, 0.9); 
   border-radius: 8px;
