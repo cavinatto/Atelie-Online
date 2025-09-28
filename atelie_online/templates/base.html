@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
 </head>
 <body>
+    {% block content %}
     <header class="header_principal">
         <div class="header_logo">
             <img class="logo" src="{{ url_for('static', filename='img/logoatelie.png') }}" alt="Logo Ateliê Online" />
@@ -16,22 +17,26 @@
         </div>
 
         <nav class="header_menu">
-            <div class="nav_item" onclick="window.location.href='{{ url_for('auth.login') }}'">
+            <a class="nav_item" href="{{ url_for('auth.login') }}">
                 <div class="nav_base"></div>
                 <span class="nav_text">Login</span>
-            </div>
-            <div class="nav_item" onclick="window.location.href='{{ url_for('cadastro') }}'">
+            </a>
+
+            <a class="nav_item" href="{{url_for('cadastro')}}">
                 <div class="nav_base"></div>
                 <span class="nav_text">Cadastro</span>
-            </div>
-            <div class="nav_item" onclick="window.location.href='{{ url_for('contrato') }}'">
+            </a>
+
+            <a class="nav_item" href="{{ url_for('contrato') }}">
                 <div class="nav_base"></div>
                 <span class="nav_text">Projeto</span>
-            </div>
-            <div class="nav_item" onclick="window.location.href='{{ url_for('contrato') }}'">
+            </a>
+    
+            <a class="nav_item" href="{{ url_for('contato') }}">
                 <div class="nav_base"></div>
                 <span class="nav_text">Contato</span>
-            </div>
+            </a>
+           
         </nav>
     </header>
 
@@ -40,6 +45,7 @@
     </main>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% endblock %}
 </body>
 </html>
 
