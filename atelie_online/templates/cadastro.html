@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="header_principal">
+    <div class="header_logo">
+        <img class="logo" src="{{ url_for('static', filename='img/logoatelie.png') }}" alt="Logo Ateliê Online" />
+        <h1 class="header_txt_Bem">Cadastrar Cliente</h1>
+    </div>
+</header>
+
+<div class="form_container cadastro">
+    <h2>Cadastrar Novo Cliente</h2>
+
+    <form action="{{ url_for('cliente.cadastrar_cliente') }}" method="POST">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input id="nome" type="text" name="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input id="telefone" type="text" name="telefone">
+        </div>
+
+        <div class="form-group">
+            <label for="cpf_cnpj">CPF/CNPJ:</label>
+            <input id="cpf_cnpj" type="text" name="cpf_cnpj">
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input id="endereco" type="text" name="endereco">
+        </div>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>
+{% endblock %}
