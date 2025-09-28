@@ -14,7 +14,8 @@ class Usuario(db.Model):
         self.senha_hash = generate_password_hash(senha)
 
     def verificar_senha(self, senha):
-        self.senha_hash = check_password_hash(senha)
+        return check_password_hash(self.senha_hash, senha)
+
 
     def __repr__(self):
         return f"<Usuario {self.nome}>"
