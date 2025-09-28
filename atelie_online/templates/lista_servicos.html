@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Serviços</title></head><body>
+  <h1>Lista de Serviços</h1>
+  <table>
+    <thead><tr><th>ID</th><th>Cliente</th><th>Tipo</th><th>Descrição</th><th>Ações</th></tr></thead>
+    <tbody>
+      {% for s in servicos %}
+      <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.nome_cliente }}</td>
+        <td>{{ s.tipo_servico }}</td>
+        <td>{{ s.descricao }}</td>
+        <td>
+          <form method="post" action="{{ url_for('servicos.excluir_servico', id=s.id) }}" style="display:inline">
+            <button type="submit">Excluir</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body></html>

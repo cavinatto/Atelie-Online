@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Clientes</title></head><body>
+  <h1>Lista de Clientes</h1>
+  <table>
+    <thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>Ações</th></tr></thead>
+    <tbody>
+      {% for c in clientes %}
+      <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.nome }}</td>
+        <td>{{ c.email }}</td>
+        <td>
+          <form method="post" action="{{ url_for('clientes.excluir_cliente', id=c.id) }}" style="display:inline">
+            <button type="submit">Excluir</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body></html>
