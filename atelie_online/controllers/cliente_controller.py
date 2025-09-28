@@ -8,7 +8,7 @@ cliente_bp = Blueprint('clientes', __name__, template_folder='../templates')
 def index():
     return redirect(url_for('clientes.cadastrar_cliente'))
 
-@cliente_bp.route('/cadastrar', methods=['GET', 'POST'])
+@cliente_bp.route('/cadastro', methods=['GET', 'POST'])
 def cadastrar_cliente():
     if request.method == 'POST':
         nome = request.form['nome']
@@ -23,7 +23,7 @@ def cadastrar_cliente():
         flash('Cliente cadastrado com sucesso!', 'success')
         return redirect(url_for('cliente.listar_clientes'))
     
-    return render_template('castro_cliente.html')
+    return render_template('cadastro.html')
 
 def login_required(func):
     def wrapper(*args, **kwargs):
@@ -39,7 +39,7 @@ def login_required(func):
 @login_required
 def listar_clientes():
     clientes = Cliente.query.all()
-    return render_template('listar_clientes.html', clientes=clientes)
+    return render_template('listar_cliente.html', clientes=clientes)
 
 @cliente_bp.route('/excluir/<int:id>', methods=['POST'])
 def excluir_cliente(id):
@@ -47,5 +47,5 @@ def excluir_cliente(id):
     db.session.delete(cliente)
     db.session.commit()
     flash('Cliente excluído com sucesso!', 'success')
-    return redirect(url_for('servico.listar_clientes'))
+    return redirect(url_for('servico.listar_cliente'))
 

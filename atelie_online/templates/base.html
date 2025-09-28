@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ateliê Online</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-      <h1>Ateliê Online</h1>
-  <nav>
-    <a href="{{ url_for('servico.cadastrar_servico') }}">Cadastrar Serviço</a> |
-    <a href="{{ url_for('servico.listar_servicos') }}">Ver Serviços</a>
-  </nav>
-  </header>
-  <main>
-    {% block content %}{% endblock %}
-  </main>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block content %}
+    <header class="header_principal">
+        <div class="header_logo">
+            <img class="logo" src="{{ url_for('static', filename='img/logoatelie.png') }}" alt="Logo Ateliê Online" />
+            <h1 class="header_txt_Bem">Bem Vindos ao Ateliê Online</h1>
+        </div>
+
+        <nav class="header_menu">
+            <a class="nav_item" href="{{ url_for('auth.login') }}">
+                <div class="nav_base"></div>
+                <span class="nav_text">Login</span>
+            </a>
+
+            <a class="nav_item" href="{{url_for('cadastro')}}">
+                <div class="nav_base"></div>
+                <span class="nav_text">Cadastro</span>
+            </a>
+
+            <a class="nav_item" href="{{ url_for('contrato') }}">
+                <div class="nav_base"></div>
+                <span class="nav_text">Projeto</span>
+            </a>
+    
+            <a class="nav_item" href="{{ url_for('contato') }}">
+                <div class="nav_base"></div>
+                <span class="nav_text">Contato</span>
+            </a>
+           
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% endblock %}
 </body>
 </html>
 
-atelie_online/templates/base.html
+ <!-- atelie_online/template/base.html -->

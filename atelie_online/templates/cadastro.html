@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <header class="header_principal">
+        <div class="header_logo">
+            <img class="logo" src="{{ url_for('static', filename='img/logoatelie.png') }}" alt="Logo Ateliê Online" />
+            <h1 class="header_txt_Bem">Cadastrar Cliente</h1>
+        </div>
+    <div class="form_container cadastro">
+        <h2>Cadastrar Novo Cliente</h2>
+       <form action="/clientes" method="POST">
+    <label>Nome:</label><br>
+    <input type="text" name="nome" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Telefone:</label><br>
+    <input type="text" name="telefone"><br><br>
+
+    <label>CPF/CNPJ:</label><br>
+    <input type="text" name="cpf_cnpj"><br><br>
+
+    <label>Endereço:</label><br>
+    <input type="text" name="endereco"><br><br>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+    </div>
+{% endblock %}
+
+ <!-- atelie_online/template/cadastro.html -->
+
+ 

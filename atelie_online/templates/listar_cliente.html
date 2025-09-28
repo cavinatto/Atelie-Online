@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% endblock %}
+  <title>Lista de Clientes</title>
+</head>
+<body>
+  <h1>Clientes Cadastrados</h1>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>CPF/CNPJ</th>
+      <th>Endereço</th>
+      <th>Data Cadastro</th>
+    </tr>
+    {% for cliente in clientes %}
+    <tr>
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.telefone }}</td>
+      <td>{{ cliente.cpf_cnpj }}</td>
+      <td>{{ cliente.endereco }}</td>
+      <td>{{ cliente.data_cadastro.strftime('%d/%m/%Y %H:%M') }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+ <!-- atelie_online/template/listar_cliente.html -->

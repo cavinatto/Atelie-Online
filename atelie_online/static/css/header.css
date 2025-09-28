@@ -1,0 +1,13 @@
+body {
+    background-image: url('../img/main.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Junge', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 150px 50px 50px 50px;
+}
