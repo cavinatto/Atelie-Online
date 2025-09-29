@@ -130,6 +130,70 @@ button.out:active {
   100% { margin-top: 100vh; }
 }
 
+/*btn voltar*/
+.btn_voltar {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: #f6f5f5;
+  box-shadow: 0px 5px 9px -3px #858585;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #5b524b;
+  text-decoration: none;
+}
+
+.btn_voltar:hover {
+  transform: translateY(-2px);
+  color: #D94E2A;
+}
+
+.btn_voltar:active {
+  color: #5b524b;
+  background: #f6f5f5;
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  transform: translateY(0);
+}
+
+/*centralizar btn voltar e criar */
+.buttons_center {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/*btn voltar e criar */
+.btn_log_criar {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: #f6f5f5;
+  box-shadow: 0px 5px 9px -3px #858585;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #5b524b;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-login-action:hover {
+  transform: translateY(-2px);
+  color: #D94E2A;
+}
+
+.btn-login-action:active {
+  color: #5b524b;
+  background: #f6f5f5;
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  transform: translateY(0);
+}
+
 /*cad_serv*/
 .btn_cad_serv {
   width: clamp(180px, 50%, 160px);
@@ -205,7 +269,7 @@ main h2 {
 }
 
 
-/*tabela*/
+/*tabelas*/
 table {
   width: 90%;
   margin: 4rem auto;
@@ -223,4 +287,60 @@ table th, table td {
 
 table th {
   background-color: #f0f0f0;
+}
+
+/*btn index*/
+.container_cad {
+  position: relative;
+  padding: 2rem;
+}
+
+
+.buttons-top {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+  margin-top: 1rem; 
+}
+
+
+.buttons-bottom {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  /*deixa a direita*/
+  justify-content: flex-end; 
+}
+
+
+.buttons-top a,
+.buttons-bottom a {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: #f6f5f5;
+  box-shadow: 0px 5px 9px -3px #858585;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #5b524b;
+  text-decoration: none;
+}
+
+.buttons-top a:hover,
+.buttons-bottom a:hover {
+  transform: translateY(-2px);
+  color: #D94E2A;
+}
+
+.buttons-top a:active,
+.buttons-bottom a:active {
+  color: #5b524b;
+  background: #f6f5f5;
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  transform: translateY(0);
 }

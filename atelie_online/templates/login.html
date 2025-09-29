@@ -13,7 +13,12 @@
     <label>Senha</label><input name="senha" type="password" required>
     <button type="submit">Entrar</button>
   </form>
-  <p><a href="{{ url_for('auth.register') }}">Criar conta</a></p>
+
+  <div class="buttons_center">
+    <a href="{{ url_for('clientes.index') }}" class="btn_log_criar">Voltar</a>
+    <a href="{{ url_for('auth.register') }}" class="btn_log_criar">Criar conta</a>
+  </div>
+
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       <ul>

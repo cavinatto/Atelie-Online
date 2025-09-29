@@ -9,14 +9,17 @@
     <div class="container_cad">
         <h2>Bem-vindo ao Ateliê Online</h2>
         
-        <div class="buttons">
-            <a href="{{ url_for('auth.login') }}" class="btn btn_log">Login</a>
-            <a href="{{ url_for('auth.register') }}" class="btn btn_cad">Cadastro</a>
-            <a href="{{ url_for('servicos.projeto') }}" class="btn btn_proj">Projeto</a>
-            <a href="{{ url_for('servicos.estamparia') }}" class="btn btn_est">Estamparia</a>
-            <a href="{{ url_for('servicos.conserto') }}" class="btn btn_cons">Conserto</a>
-            <a href="{{ url_for('servicos.customizacao') }}" class="btn btn_cust">Customização</a>
-        </div>
+    <div class="buttons-top">
+        <a href="{{ url_for('auth.login') }}" class="btn btn_log">Login</a>
+        <a href="{{ url_for('auth.register') }}" class="btn btn_cad">Cadastro</a>
+        <a href="{{ url_for('servicos.projeto') }}" class="btn btn_proj">Projeto</a>
     </div>
+
+    <div class="buttons-bottom">
+        <a href="{{ url_for('servicos.estamparia') }}" class="btn btn_est">Estamparia</a>
+        <a href="{{ url_for('servicos.conserto') }}" class="btn btn_cons">Conserto</a>
+        <a href="{{ url_for('servicos.customizacao') }}" class="btn btn_cust">Customização</a>
+    </div>
+</div>
 </body>
 </html>
