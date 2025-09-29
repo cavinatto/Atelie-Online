@@ -8,7 +8,7 @@ cliente_bp = Blueprint('clientes', __name__, template_folder='../templates')
 
 @cliente_bp.route('/')
 def index():
-    return redirect(url_for('clientes.cadastrar_cliente'))
+    return render_template('index.html')
 
 @cliente_bp.route('/cadastrar', methods=['GET', 'POST'])
 def cadastrar_cliente():
@@ -59,3 +59,4 @@ def excluir_cliente(id):
         db.session.rollback()
         flash(f'Erro ao excluir cliente: {str(e)}', 'danger')
     return redirect(url_for('clientes.listar_clientes'))
+

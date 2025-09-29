@@ -45,7 +45,7 @@ def login():
             session['usuario_id'] = usuario.id
             session['usuario_nome'] = usuario.nome
             flash('Login realizado com sucesso!', 'success')
-            return redirect(url_for('clientes.listar_clientes'))
+            return redirect(url_for('clientes.index'))
 
         flash('E-mail ou senha incorretos.', 'danger')
         return redirect(url_for('auth.login'))

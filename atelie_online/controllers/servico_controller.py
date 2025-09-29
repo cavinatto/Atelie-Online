@@ -44,3 +44,20 @@ def excluir_servico(id):
         db.session.rollback()
         flash(f'Erro ao excluir serviço: {str(e)}', 'danger')
     return redirect(url_for('servicos.listar_servicos'))
+
+#arrumar rota ainda
+@servico_bp.route('/projeto')
+def projeto():
+    return "Página Projeto - Em construção"
+
+@servico_bp.route('/estamparia')
+def estamparia():
+    return "Página Estamparia - Em construção"
+
+@servico_bp.route('/conserto')
+def conserto():
+    return "Página Conserto - Em construção"
+
+@servico_bp.route('/customizacao')
+def customizacao():
+    return "Página Customização - Em construção"
