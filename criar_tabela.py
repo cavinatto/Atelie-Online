@@ -6,3 +6,8 @@ app = create_app()
 with app.app_context():
     db.create_all()
     print("Tabelas criadas com sucesso!")
+    
+#comandos
+# docker compose up -d
+# docker compose exec web python criar_tabela.py
+# depois entra
