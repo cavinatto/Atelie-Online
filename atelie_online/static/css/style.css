@@ -52,6 +52,17 @@ form {
   box-shadow: inset 0px 5px 9px -3px #858585;
 }
 
+h1 {
+    text-align: center;
+    color: #5b524b; 
+    margin-top: 3rem;
+} 
+
+table {
+width: 90%;
+margin: 4rem auto; 
+}
+
 label {
   display: block;
   margin-top: 1rem;
@@ -185,12 +196,14 @@ nav a:active {
   transform: translateY(0);
 }
 
+
 main h2 {
-  text-align: center;   /* centraliza */
+  text-align: center;   
   margin: 3rem -21rem 1rem auto;
-  margin-bottom: 1rem;  /* espaço entre o texto e o form */
-  color: #5b524b;          /* ajusta a cor se quiser */
+  margin-bottom: 1rem;  
+  color: #5b524b;          
 }
+
 
 /*tabela*/
 table {
