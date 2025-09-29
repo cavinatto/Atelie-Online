@@ -12,7 +12,10 @@
     <input name="senha" type="password" required>
     <button type="submit">Registrar</button>
   </form>
-  <p><a href="{{ url_for('auth.login') }}">Já tenho conta</a></p>
+
+  <div class="buttons_center">
+    <a href="{{ url_for('clientes.index') }}" class="btn_log_criar">Voltar</a>
+    <a href="{{ url_for('auth.login') }}" class="btn_log_criar">Já tenho conta</a>
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       <ul>
