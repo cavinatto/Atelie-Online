@@ -44,12 +44,12 @@ header {
 /*base menu edit_txt*/
 form {
   max-width: 400px;
-  margin: 3rem 30rem 1rem auto;
-  background: rgba(255,255,255); 
+  /* centraliza na tela */
+  margin: 3rem auto 1rem auto; 
+  background: rgba(255, 255, 255); 
   padding: 2rem;
   border-radius: 30px;
   box-shadow: inset 0px 5px 9px -3px #858585;
-
 }
 
 label {

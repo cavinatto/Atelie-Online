@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>Registro</title></head>
+<head><meta charset="utf-8"><title>Registro</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"></head>
 <body>
   <h1>Registrar</h1>
   <form method="post" action="{{ url_for('auth.register') }}">
