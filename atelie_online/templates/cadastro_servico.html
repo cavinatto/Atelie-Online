@@ -1,18 +1,19 @@
-{% extends 'base.html' %}
-{% block content %}
-<h2>Cadastro de Serviço</h2>
-<form method="POST">
-  <label>Nome do Cliente:</label>
-  <input type="text" name="nome_cliente" required>
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Cadastro Serviço</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-  <label>Tipo de Serviço:</label>
-  <input type="text" name="tipo_servico" required>
+</head>
 
-  <label>Descrição:</label>
-  <textarea name="descricao" required></textarea>
-
-  <button type="submit">Cadastrar</button>
-</form>
-{% endblock %}
-
-#atelie_online/templates/cadastro_servico.html
+<body>
+  <h1>Cadastrar Serviço</h1>
+  <form method="post" action="{{ url_for('servicos.cadastrar_servico') }}">
+    <label>Nome do cliente</label><input name="nome_cliente" required>
+    <label>Tipo</label><input name="tipo_servico" required>
+    <label>Descrição</label><textarea name="descricao" required></textarea>
+    <button type="submit">Salvar</button>
+  </form>
+  <p><a href="{{ url_for('servicos.listar_servicos') }}">Ver serviços</a></p>
+</body></html>

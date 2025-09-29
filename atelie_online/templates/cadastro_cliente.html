@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Cadastro Cliente</title></head>
+<body>
+  <h1>Cadastrar Cliente</h1>
+  <form method="post" action="{{ url_for('clientes.cadastrar_cliente') }}">
+    <label>Nome</label><input name="nome" required>
+    <label>Email</label><input name="email" type="email" required>
+    <label>Telefone</label><input name="telefone">
+    <label>CPF/CNPJ</label><input name="cpf_cnpj">
+    <label>Endereço</label><input name="endereco">
+    <button type="submit">Salvar</button>
+  </form>
+  <p><a href="{{ url_for('clientes.listar_clientes') }}">Ver clientes</a></p>
+</body>
+</html>

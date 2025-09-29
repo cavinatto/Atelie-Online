@@ -2,7 +2,6 @@ from . import db
 
 class Servico(db.Model):
     __tablename__ = 'servicos'
-
     id = db.Column(db.Integer, primary_key=True)
     nome_cliente = db.Column(db.String(100), nullable=False)
     tipo_servico = db.Column(db.String(100), nullable=False)
@@ -12,4 +11,3 @@ class Servico(db.Model):
         self.nome_cliente = nome_cliente
         self.tipo_servico = tipo_servico
         self.descricao = descricao
-#atelie_online/models/servico_model.py
