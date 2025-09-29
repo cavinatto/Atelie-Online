@@ -52,7 +52,7 @@ def projeto():
 
 @servico_bp.route('/estamparia')
 def estamparia():
-    return "Página Estamparia - Em construção"
+    return render_template('estamparia.html')
 
 @servico_bp.route('/conserto')
 def conserto():

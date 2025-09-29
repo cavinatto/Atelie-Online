@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
-<body>
+<body class="back_adm">
   <h1>Cadastrar Cliente</h1>
   <form method="post" action="{{ url_for('clientes.cadastrar_cliente') }}">
     <label>Nome</label><input name="nome" type="text" required>
