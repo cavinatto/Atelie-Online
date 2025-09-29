@@ -56,8 +56,8 @@ def estamparia():
 
 @servico_bp.route('/conserto')
 def conserto():
-    return "Página Conserto - Em construção"
+    return render_template('conserto.html')
 
 @servico_bp.route('/customizacao')
 def customizacao():
-    return "Página Customização - Em construção"
+    return render_template('customizacao.html')
