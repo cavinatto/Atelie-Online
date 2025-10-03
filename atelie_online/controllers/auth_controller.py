@@ -44,8 +44,13 @@ def login():
         if usuario and usuario.verificar_senha(senha):
             session['usuario_id'] = usuario.id
             session['usuario_nome'] = usuario.nome
+            session['is_admin'] = usuario.is_admin
+
             flash('Login realizado com sucesso!', 'success')
-            return redirect(url_for('clientes.index'))
+            if usuario.is_admin:
+                return redirect(url_for('admin_dashboard'))
+            else:
+                return redirect(url_for('clientes.index'))
 
         flash('E-mail ou senha incorretos.', 'danger')
         return redirect(url_for('auth.login'))
