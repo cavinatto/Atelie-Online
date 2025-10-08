@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Estamparia</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
@@ -18,13 +18,13 @@
     </div>
   </div>
 
-    <div class="buttons_center">
+    <div class="button_center">
     <button class="btn_log_criar" id="prevBtn">&lt;</button>
     <button class="btn_log_criar" id="nextBtn">&gt;</button>
   </div>
 
-  <div class="buttons_center">
-    <a href="#" class="btn_log_criar">Selecionar</a>
+  <div class="button_center">
+    <a href="{{ url_for('servicos.material') }}" class="btn_log_criar">Selecionar</a>
     <a href="{{ url_for('clientes.index') }}" class="btn_log_criar">Voltar</a>
   </div>
 

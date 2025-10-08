@@ -17,6 +17,15 @@ body.back_index {
   color: #5b524b;
 }
 
+body.back_proj {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('../img/proj.jpg') no-repeat center 10%; 
+  background-size: cover; 
+  color: #5b524b;
+}
+
 body.back_log {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -33,6 +42,27 @@ body.back_serv {
   background: url('../img/serv.jpg') no-repeat center 25%; 
   background-size: cover; 
   color: #5b524b;
+}
+
+.box_proj {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  text-align: center;
+  position: relative;
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  border-radius: 30px 30px 30px 30px;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.container_cad h2 {
+  color: #c5c4c4;
+}
+
+footer {
+  color: #171717;
+  margin-top: 3rem;
 }
 
 header {
@@ -185,7 +215,7 @@ button.out:active {
 }
 
 /*centralizar btn voltar e criar */
-.buttons_center {
+.button_center {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -208,12 +238,12 @@ button.out:active {
   text-align: center;
 }
 
-.btn-login-action:hover {
+.btn_log_criar:hover {
   transform: translateY(-2px);
   color: #D94E2A;
 }
 
-.btn-login-action:active {
+.btn_log_criar:active {
   color: #5b524b;
   background: #f6f5f5;
   box-shadow: inset 0px 5px 9px -3px #858585;
@@ -322,7 +352,7 @@ table th {
 }
 
 
-.buttons-top {
+.button-top {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -331,7 +361,7 @@ table th {
 }
 
 
-.buttons-bottom {
+.button-bottom {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -343,8 +373,8 @@ table th {
 }
 
 
-.buttons-top a,
-.buttons-bottom a {
+.button-top a,
+.button-bottom a {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 12px;
@@ -357,14 +387,14 @@ table th {
   text-decoration: none;
 }
 
-.buttons-top a:hover,
-.buttons-bottom a:hover {
+.button-top a:hover,
+.button-bottom a:hover {
   transform: translateY(-2px);
   color: #D94E2A;
 }
 
-.buttons-top a:active,
-.buttons-bottom a:active {
+.button-top a:active,
+.button-bottom a:active {
   color: #5b524b;
   background: #f6f5f5;
   box-shadow: inset 0px 5px 9px -3px #858585;
@@ -397,6 +427,32 @@ table th {
 }
 
 /* btn carrossel nav */
-.buttons_center button {
+.button_center button {
   margin: 0 0.5rem;
+}
+
+/* ____________________ pag adim_dasboard____________________ */
+
+.button-top_adm {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button-top_adm .btn {
+  /* texto de cima para baixo */
+  writing-mode: vertical-rl;
+   /* arruma aescrita */
+  transform: rotate(-180deg);
+  transform-origin: center;
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
 }

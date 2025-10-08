@@ -1,12 +1,54 @@
 <!doctype html>
-<html>
-  <head>
+<html lang="pt-BR">
+<head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Projeto</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
-<body class="back_adm">
 
-</body></html>
+<body class="back_proj">
+  <div class="container_cad">
+    <h2>Ateliê Online</h2>
+
+
+  <div class="button-top">
+    <a href="{{ url_for('auth.login') }}" class="btn btn_log">Login</a>
+        <a href="{{ url_for('auth.register') }}" class="btn btn_cad">Cadastro</a>
+        <a href="{{ url_for('clientes.index') }}" class="btn btn_criar">Voltar</a>
+        
+  </div>
+
+  <div class="box_proj">
+    
+    <main class="container">
+    <section class="card" aria-labelledby="historia">
+    <h1>Nossa História</h1>
+    <p>O <strong>Ateliê Online</strong> nasceu da ideia de transformar o trabalho artesanal da costura em uma experiência digital mais acessível e prática. Tradicionalmente, os serviços de ajustes, consertos e roupas sob medida aconteciam apenas no espaço físico do ateliê, o que limitava o alcance e a praticidade para muitos clientes.</p>
+
+    <p>Com o avanço da tecnologia e a necessidade de soluções ágeis, criamos este projeto com o objetivo de aproximar o público do universo da moda e da costura, oferecendo um ambiente virtual onde é possível conhecer serviços, solicitar atendimentos e acompanhar novidades sem sair de casa.</p>
+
+    <p>Nosso propósito é unir a tradição do trabalho manual, que valoriza cada detalhe, à inovação digital, que amplia possibilidades e facilita o acesso. O <strong>Ateliê Online</strong> representa essa ponte entre o cuidado artesanal e a modernidade das plataformas digitais.</p>
+
+    <div class="meta">
+    <span>📍 Projeto acadêmico — Ads</span>
+    <span>•</span>
+    <span>🕒 Atualizado recentemente</span>
+    </div>
+
+    <a class="btn" href="#">Saiba mais</a>
+    </section>
+    </main>
+  </div>
+  
+  <footer>
+  <small>© Ateliê Online — Desenvolvido por: 
+  Alessandra Furlanetto Rigonatti 
+  Enzo Pelakoski Cavinato 
+  Guilherme de Freitas Fracasso 
+  Matheus Barros Ferreira 
+  Rafaela Wohlers Rodrigues  </small>
+  </footer>
+</body>
+</html>
