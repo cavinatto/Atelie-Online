@@ -17,12 +17,13 @@ def create_app():
     app.register_blueprint(cliente_bp, url_prefix='/clientes')
     app.register_blueprint(servico_bp, url_prefix='/servicos')
 
-    @app.route('/admin/dashboard')
+    @app.route('/admin_dashboard')
     def admin_dashboard():
         from flask import session, redirect, url_for, render_template
 
-        if 'usuario_id' not in session or not session.get('is_admin'):
-            return redirect(url_for('auth.login'))
+        #tirar estes comentário quando ogin ok - é apenas para ver css do admin
+        #if 'usuario_id' not in session or not session.get('is_admin'):
+            #return redirect(url_for('auth.login'))
         return render_template('admin_dashboard.html')
     
     return app
