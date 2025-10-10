@@ -16,7 +16,7 @@ class Usuario(db.Model):
 
     
     def set_senha(self, senha):
-        self.senha_hash = generate_password_hash(senha).decode('utf-8')
+        self.senha_hash = generate_password_hash(senha)
 
     def verificar_senha(self, senha):
         return check_password_hash(self.senha_hash, senha)
