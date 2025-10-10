@@ -6,16 +6,16 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 
-<body class="back_index">
-    <div class="container_cad">
+<body class="back_adm">
+    <div class="container_admin">
         <h2>Área Admistrativa</h2>
         
-    <div class="button-top">
-        <a href="{{ url_for('auth.login') }}" class="btn btn_log">Logout</a>
-        <a href="{{ url_for('clientes.cadastrar_cliente') }}" class="btn btn_cad">Cad Cliente</a>
-        <a href="{{ url_for('clientes.listar_clientes') }}" class="btn btn_proj">List Cliente</a>
-        <a href="{{ url_for('servicos.cadastrar_servico') }}" class="btn btn_proj">Cad Serviço</a>
-        <a href="{{ url_for('servicos.listar_servicos') }}" class="btn btn_proj">List Serviço</a>
+    <div class="button_lateral">
+        <a href="{{ url_for('auth.login') }}" class="btn">Logout</a>
+        <a href="{{ url_for('clientes.cadastrar_cliente') }}" class="btn">Cad Cliente</a>
+        <a href="{{ url_for('clientes.listar_clientes') }}" class="btn">List Cliente</a>
+        <a href="{{ url_for('servicos.cadastrar_servico') }}" class="btn">Cad Serviço</a>
+        
     </div>
 
 </div>

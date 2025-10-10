@@ -8,6 +8,8 @@ body.back_adm {
   color: #5b524b;
 }
 
+
+
 body.back_index {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -135,6 +137,140 @@ input, textarea {
   
   
 }
+
+/* admim */
+.btn {
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  border: none;
+  border-radius: 12px;
+  background: #f6f5f5;
+  box-shadow: 0px 5px 9px -3px #858585;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #5b524b;
+  /*tira sublinhado*/
+  text-decoration: none;
+  /*para transforação, rotação*/
+  /*display: inline-block;*/
+  /*rotaciona o texto, de baixo para cima, esquerda para direita*/
+  /*writing-mode: sideways-lr;*/
+}
+
+/* mouse*/
+.btn:hover {
+  transform: translateY(-2px);
+  color: #D94E2A;
+}
+
+/* apertado*/
+.btn:active {
+  color: #5b524b; 
+  background: #f6f5f5; 
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  /* tira o “sobe” do hover */
+  transform: translateY(0); 
+}
+
+/*animação entrar e sair*/
+.btn.out {
+  margin-top: 100vh; 
+  animation: entrar 2s forwards ease-in-out;
+}
+
+@keyframes entrar {
+  0% { margin-top: 100vh; }
+  100% { margin-top: 1rem; } 
+}
+
+.btn.out:active {
+  animation: sair 2s forwards ease-in-out;
+  box-shadow: 0px 5px 9px -3px #858585;;
+}
+
+@keyframes sair {
+  0% { margin-top: 1rem; }
+  100% { margin-top: 100vh; }
+}
+
+/*para  deixar na lateral */
+.button_lateral {
+  position: fixed;
+  left: 25%;;
+  top: 4%;
+  transform: translateY(-50%);
+  display: flex;
+
+  /*um de baixo do outro, txt na horizontal*/
+  /*flex-direction: column;*/
+  /*margem entre eles*/
+  gap: 1rem;
+}
+
+/* btn baixo */
+.baixo  {
+  position:fixed;
+  left: 50%;
+  bottom: 2rem;
+  gap: 1rem;
+  display: flex;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.baixo a{
+    display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: #f6f5f5;
+  box-shadow: 0px 5px 9px -3px #858585;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: #5b524b;
+  text-decoration: none;
+}
+
+/* mouse*/
+.baixo a:hover {
+  transform: translateY(-2px);
+  color: #D94E2A;
+}
+
+/* apertado*/
+.baixo a:active {
+  color: #5b524b; 
+  background: #f6f5f5; 
+  box-shadow: inset 0px 5px 9px -3px #858585;
+  /* tira o “sobe” do hover */
+  transform: translateY(0); 
+}
+
+/*animação entrar e sair*/
+.baixo a.out {
+  margin-top: 100vh; 
+  animation: entrar 2s forwards ease-in-out;
+}
+
+@keyframes entrar {
+  0% { margin-top: 100vh; }
+  100% { margin-top: 1rem; } 
+}
+
+.baixo a.out:active {
+  animation: sair 2s forwards ease-in-out;
+  box-shadow: 0px 5px 9px -3px #858585;;
+}
+
+@keyframes sair {
+  0% { margin-top: 1rem; }
+  100% { margin-top: 100vh; }
+}
+
 
 /* Cadastrar normal */
 button {

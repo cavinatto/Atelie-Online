@@ -16,6 +16,9 @@
     <label>Endereço</label><input name="endereco">
     <button type="submit">Salvar</button>
   </form>
-  <p><a href="{{ url_for('clientes.listar_clientes') }}">Ver clientes</a></p>
+  <div class ="baixo">
+    <a href="{{ url_for('clientes.listar_clientes') }}" class="btn_baixo">Ver cliente</a>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn_baixo">Voltar</a>
+  </div>
 </body>
 </html>
