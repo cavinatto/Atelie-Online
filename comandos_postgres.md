@@ -5,7 +5,7 @@
 
 ### - Entrar no Postgres pelo terminal
 
-<p><span style="color: #40916c;">docker exec -it python_geral-db-1 psql -U postgres -d atelie_db (entra no postgre)</span></p>
+<p><span style="color: #40916c;">docker exec -it atelie-online-db-1 psql -U postgres -d atelie_db </span></p>
 
 ##### resposta
 
@@ -36,15 +36,17 @@ Did not find any relations.
      email VARCHAR(120) UNIQUE NOT NULL,<br>
      senha_hash VARCHAR(128) NOT NULL,<br>   
      is_admin BOOLEAN DEFAULT FALSE,<br>
-     data_criacao TIMESTAMP DEFAULT NOW()
- );<br>
- resposta - CREATE TABLES</span></p>
+     data_criacao TIMESTAMP DEFAULT NOW()<BR>
+ );
+ </span></p>
+
+ resposta - CREATE TABLES
 
  ##### resposta se não tiver
 
 CREATE TABLE
 
-### - Mostrar infromações de uma tabela (no caso usuarios)
+### - Mostrar estrutura de uma tabela (no caso usuarios)
 
 <p><span style="color: #40916c;">\d usuarios</span></p>
 
@@ -117,10 +119,49 @@ Indexes:
 
 ERROR:  table "usuarios_errado" does not exist
 
-### - Deletar tabela
+### - Erro por falta de tabela no postgres
 
-<p><span style="color: #40916c;">DROP TABLE usuarios;</span></p>
+<p><span style="color: #40916c;">sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "servicos" does not exist
+LINE 2: FROM servicos</span></p>
 
-##### resposta
+### - Dicionando valores
 
-DROP TABLE
+<p><span style="color: #40916c;">CREATE ROLE admin1 WITH LOGIN PASSWORD 'senha_segura1';<br>
+ALTER ROLE admin1 WITH SUPERUSER;</span></p>
+
+### - Ver dados da tabela
+
+<p><span style="color: #40916c;">SELECT * FROM clientes;</span></p>
+
+<br>
+<p><span style="color: #d5390eff;">ATENÇÂO</p>
+
+### para criar a tabela deve criadas
+
+#### mostrar containers em execução
+
+<p><span style="color: #40916c;">docker ps</p>
+
+#### resposta 
+
+vê o que foi criado
+ver o nome da imagem
+ex:CONTAINER ID   IMAGE               COMMAND                  CREATED       STATUS       PORTS                    NAMES
+a9d29f416a53   atelie-online-web   "python app.py"          7 hours ago   Up 7 hours   0.0.0.0:5000->5000/tcp   atelie-online-web-1
+
+### para criar table
+
+<p><span style="color: #40916c;">docker compose exec web python criar_tabela.py</p>
+
+#### resposta
+
+Tabelas criadas com sucesso!
+
+Cria tabelas não existentes, não apaga nem sobresceve
+depois é só entrar no postgre e dar \dt para conferir
+
+### verificar tabelas que outros criaram
+
+<p><span style="color: #40916c;">docker exec -it atelie-online-db-1 psql -U postgres -d atelie_db</p>
+
+<p><span style="color: #40916c;">\dt public.*</p>
