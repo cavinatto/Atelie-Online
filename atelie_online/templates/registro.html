@@ -13,7 +13,7 @@
     <button type="submit">Registrar</button>
   </form>
 
-  <div class="buttons_center">
+  <div class="button_center">
     <a href="{{ url_for('clientes.index') }}" class="btn_log_criar">Voltar</a>
     <a href="{{ url_for('auth.login') }}" class="btn_log_criar">Já tenho conta</a>
   {% with messages = get_flashed_messages(with_categories=true) %}

@@ -1,57 +1,47 @@
 <!doctype html>
-<html lang="pt-BR">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ateliê Online — Nosso Projeto</title>
-<style>
-:root{--accent:#c0392b;--bg:#f7f7f7;--card:#ffffff;--text:#222}
-*{box-sizing:border-box}
-body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased}
-header{background:linear-gradient(90deg, rgba(192,57,43,0.95), rgba(231,76,60,0.95)); color:#fff; padding:3rem 1rem; text-align:center}
-header h1{margin:0;font-size:clamp(1.5rem,3vw,2.25rem);letter-spacing:-0.02em}
-header p{margin:.5rem 0 0;opacity:.95}
-.container{max-width:980px;margin:2rem auto;padding:0 1rem}
-.card{background:var(--card);border-radius:12px;padding:1.6rem;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-.lead{font-size:1.05rem;line-height:1.6;color:#333}
-.meta{display:flex;gap:1rem;align-items:center;margin-top:.8rem;color:#666;font-size:.95rem}
-.btn{display:inline-block;margin-top:1rem;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
-footer{max-width:980px;margin:3rem auto 4rem;padding:1rem;text-align:center;color:#777}
-@media(min-width:900px){header{padding:4rem 1rem} .card{padding:2rem}}
-</style>
+  <meta charset="utf-8">
+  <title>Conserto</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
-<body>
-<header>
-<h1>Ateliê Online</h1>
-<p>Unindo o cuidado artesanal da costura à praticidade do digital</p>
-</header>
 
-<main class="container">
-<section class="card" aria-labelledby="historia">
-<h2 id="historia">Nossa História</h2>
-<p class="lead">O <strong>Ateliê Online</strong> nasceu da ideia de transformar o trabalho artesanal da costura em uma experiência digital mais acessível e prática. Tradicionalmente, os serviços de ajustes, consertos e roupas sob medida aconteciam apenas no espaço físico do ateliê, o que limitava o alcance e a praticidade para muitos clientes.</p>
+<body class="back_serv">
+  <h1>consertos</h1>
 
-<p class="lead">Com o avanço da tecnologia e a necessidade de soluções ágeis, criamos este projeto com o objetivo de aproximar o público do universo da moda e da costura, oferecendo um ambiente virtual onde é possível conhecer serviços, solicitar atendimentos e acompanhar novidades sem sair de casa.</p>
+    <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="{{ url_for('static', filename='img/cons1.jpg') }}" alt="Estampa 1">
+      <img src="{{ url_for('static', filename='img/cons2.jpg') }}" alt="Estampa 2">
+      <img src="{{ url_for('static', filename='img/cons3.jpg') }}" alt="Estampa 3">
+    </div>
+  </div>
 
-<p class="lead">Nosso propósito é unir a tradição do trabalho manual, que valoriza cada detalhe, à inovação digital, que amplia possibilidades e facilita o acesso. O <strong>Ateliê Online</strong> representa essa ponte entre o cuidado artesanal e a modernidade das plataformas digitais.</p>
+    <div class="button_center">
+    <button class="btn_log_criar" id="prevBtn">&lt;</button>
+    <button class="btn_log_criar" id="nextBtn">&gt;</button>
+  </div>
 
-<div class="meta">
-<span>📍 Projeto acadêmico — Ads</span>
-<span>•</span>
-<span>🕒 Atualizado recentemente</span>
-</div>
+  <div class="button_center">
+    <a href="#" class="btn_log_criar">Selecionar</a>
+    <a href="{{ url_for('clientes.index') }}" class="btn_log_criar">Voltar</a>
+  </div>
 
-<a class="btn" href="#">Saiba mais</a>
-</section>
-</main>
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const images = Array.from(track.children);
+    let index = 0;
 
-<footer>
-<small>© Ateliê Online — Desenvolvido por: 
-Alessandra Furlanetto Rigonatti 
-Enzo Pelakoski Cavinato 
-Guilherme de Freitas Fracasso 
-Matheus Barros Ferreira 
-Rafaela Wohlers Rodrigues  </small>
-</footer>
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      index = (index + 1) % images.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      index = (index - 1 + images.length) % images.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    });
+  </script>
+
 </body>
 </html>

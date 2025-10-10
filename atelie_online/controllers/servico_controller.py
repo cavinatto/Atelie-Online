@@ -48,7 +48,7 @@ def excluir_servico(id):
 #arrumar rota ainda
 @servico_bp.route('/projeto')
 def projeto():
-    return "Página Projeto - Em construção"
+    return render_template('projeto.html')
 
 @servico_bp.route('/estamparia')
 def estamparia():
@@ -61,3 +61,7 @@ def conserto():
 @servico_bp.route('/customizacao')
 def customizacao():
     return render_template('customizacao.html')
+
+@servico_bp.route('/material')
+def material():
+    return render_template('mat_cons.html')

@@ -15,5 +15,8 @@
     <label>Descrição</label><textarea name="descricao" required></textarea>
     <button type="submit">Salvar</button>
   </form>
-  <p><a href="{{ url_for('servicos.listar_servicos') }}">Ver serviços</a></p>
+  <div class ="baixo">
+    <a href="{{ url_for('servicos.listar_servicos') }}" class="btn_baixo">Ver serviços</a>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn_baixo">Voltar</a>
+  </div>
 </body></html>

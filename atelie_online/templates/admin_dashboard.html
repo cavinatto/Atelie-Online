@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Administração</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+
+<body class="back_adm">
+    <div class="container_admin">
+        <h2>Área Admistrativa</h2>
+        
+    <div class="button_lateral">
+        <a href="{{ url_for('auth.login') }}" class="btn">Logout</a>
+        <a href="{{ url_for('clientes.cadastrar_cliente') }}" class="btn">Cad Cliente</a>
+        <a href="{{ url_for('clientes.listar_clientes') }}" class="btn">List Cliente</a>
+        <a href="{{ url_for('servicos.cadastrar_servico') }}" class="btn">Cad Serviço</a>
+        <a href="{{ url_for('servicos.listar_servicos') }}" class="btn">List Serviço</a>
+        
+    </div>
+
+</div>
+</body>
