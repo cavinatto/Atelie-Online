@@ -65,3 +65,6 @@ def customizacao():
 @servico_bp.route('/material')
 def material():
     return render_template('mat_cons.html')
+
+#atelie_online\controllers\servico_controller.py
+

@@ -3,7 +3,7 @@ body.back_adm {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: url('../img/adm.jpg') no-repeat center  center; 
+  background: url('../img/adm.jpg') no-repeat center  10%;
   background-size: cover; 
   color: #5b524b;
 }
@@ -59,6 +59,10 @@ body.back_serv {
   margin: 2rem;
 }
 
+.container_admin {
+  margin-left: 4vb;
+  margin-top: 4vh;
+}
 .container_cad h2 {
   color: #c5c4c4;
 }
@@ -593,3 +597,6 @@ table th {
   cursor: pointer;
   font-weight: bold;
 }
+
+/*atelie_online\static\css\style.css*/
+

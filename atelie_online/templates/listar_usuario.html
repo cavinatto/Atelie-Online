@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Clientes</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"></head>
+<body class="back_adm">
+  <h1>Lista de Usuário</h1>
+  <table>
+    <thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>Ações</th></tr></thead>
+    <tbody>
+      {% for c in admis %}
+      <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.nome }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{c.data_criacao_strftie("%Y/%m/%d %H:%M")}}</td>
+        <td>
+          <form method="post" action="{{ url_for('clientes.excluir_cliente', id=c.id) }}" style="display:inline">
+            <button type="submit">Excluir</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="baixo">
+    <a href="{{ url_for('admin_dashboard') }}" class="btn_baixo">Voltar</a>
+  </div>
+</body></html>
+
+<!--atelie_online\templates\listar_usuario.html-->
+
