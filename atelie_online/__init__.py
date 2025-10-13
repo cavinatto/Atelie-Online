@@ -27,3 +27,6 @@ def create_app():
     app.register_blueprint(servico_bp, url_prefix='/servicos')
 
     return app
+
+#atelie_online\__init__.py
+

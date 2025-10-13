@@ -4,6 +4,12 @@ from atelie_online.models import db
 from atelie_online.controllers.auth_controller import auth_bp
 from atelie_online.controllers.cliente_controller import cliente_bp
 from atelie_online.controllers.servico_controller import servico_bp
+#add usuário
+from flask_migrate import Migrate
+#
+from atelie_online.controllers.usuario_controller import usuario_bp
+
+
 
 def create_app():
     app = Flask(__name__, template_folder='atelie_online/templates', static_folder='atelie_online/static')
@@ -17,6 +23,9 @@ def create_app():
     app.register_blueprint(cliente_bp, url_prefix='/clientes')
     app.register_blueprint(servico_bp, url_prefix='/servicos')
 
+    #
+    app.register_blueprint(usuario_bp, url_prefix='/usuarios')
+
     @app.route('/admin_dashboard')
     def admin_dashboard():
         from flask import session, redirect, url_for, render_template
@@ -25,9 +34,16 @@ def create_app():
         #if 'usuario_id' not in session or not session.get('is_admin'):
             #return redirect(url_for('auth.login'))
         return render_template('admin_dashboard.html')
+
+    #add usuario
+    migrate = Migrate(app, db)
     
     return app
+        
 
 if __name__ == '__main__':
     app = create_app()
     app.run(debug=True, host='0.0.0.0')
+
+#app.py
+

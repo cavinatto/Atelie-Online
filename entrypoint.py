@@ -26,3 +26,6 @@ if __name__ == '__main__':
         db.create_all()
         print("Tabelas criadas (se não existiam).")
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+#entrypoint.py
+
