@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from atelie_online.models.usuario import Usuario
 from atelie_online.models import db
-from atelie_online.utils.globals_state import atualizar_lista_admins
 
 auth_bp = Blueprint('auth', __name__, template_folder='../templates/auth')
 
@@ -26,10 +25,6 @@ def register():
         try:
             db.session.add(novo_usuario)
             db.session.commit()
-            
-            #atualizar lista
-            atualizar_lista_admins(db, Usuario)
-            
             flash('Cadastro realizado com sucesso! Faça login.', 'success')
             return redirect(url_for('auth.login'))
         except Exception as e:
@@ -67,6 +62,4 @@ def logout():
     session.clear()
     flash('Logout realizado com sucesso!', 'info')
     return redirect(url_for('auth.login'))
-
-#atelie_online\controllers\auth_controller.py
 

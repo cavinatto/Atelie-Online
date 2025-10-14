@@ -21,5 +21,4 @@ with app.app_context():
 # docker compose exec web python criar_tabela.py
 #resposta Tabelas criadas com sucesso!
 
-#criar_tabela.py
 

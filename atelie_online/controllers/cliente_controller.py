@@ -60,5 +60,3 @@ def excluir_cliente(id):
         flash(f'Erro ao excluir cliente: {str(e)}', 'danger')
     return redirect(url_for('clientes.listar_clientes'))
 
-#atelie_online\controllers\cliente_controller.py
-
