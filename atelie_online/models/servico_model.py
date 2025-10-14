@@ -11,6 +11,3 @@ class Servico(db.Model):
         self.nome_cliente = nome_cliente
         self.tipo_servico = tipo_servico
         self.descricao = descricao
-
-#atelie_online\models\servico_model.py
-

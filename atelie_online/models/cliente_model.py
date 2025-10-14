@@ -15,6 +15,3 @@ class Cliente(db.Model):
         self.telefone = telefone
         self.cpf_cnpj = cpf_cnpj
         self.endereco = endereco
-
-#atelie_online\models\cliente_model.py
-
