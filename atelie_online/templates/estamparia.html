@@ -1,10 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Estamparia</title>
+{% extends "base.html" %}
+
+{% block title %}Estamparia{% endblock %}
+
+{% block content %}
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-</head>
 
 <body class="back_serv">
   <h1>Estamparia</h1>
@@ -24,7 +23,7 @@
   </div>
 
   <div class="button_center">
-    <a href="{{ url_for('servicos.material') }}" class="btn_log_criar">Selecionar</a>
+    <a href="{{ url_for('servicos.estamparia') }}" class="btn_log_criar">Selecione</a>
     <a href="{{ url_for('clientes.index') }}" class="btn_log_criar">Voltar</a>
   </div>
 
@@ -43,6 +42,6 @@
       track.style.transform = `translateX(-${index * 100}%)`;
     });
   </script>
-
+{% endblock %}
 </body>
 </html>

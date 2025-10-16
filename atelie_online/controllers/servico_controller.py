@@ -50,9 +50,31 @@ def excluir_servico(id):
 def projeto():
     return render_template('projeto.html')
 
-@servico_bp.route('/estamparia')
+@servico_bp.route('/estamparia', methods=['GET', 'POST'])
 def estamparia():
+    if request.method == 'POST':
+        # aqui você pode lidar com o envio da imagem e descrição
+        imagem = request.files.get('imagem')
+        descricao = request.form.get('descricao')
+        
+        # por enquanto, só imprime para confirmar
+        print("Descrição:", descricao)
+        print("Imagem recebida:", imagem.filename if imagem else "Nenhuma imagem")
+
+        # redireciona para a página inicial após o envio
+        flash("Estampa enviada com sucesso!")
+        return redirect(url_for('index'))  # ajuste o nome da rota da sua página inicial
+    
     return render_template('estamparia.html')
+
+    if imagem and imagem.filename != '':
+        caminho = os.path.join(UPLOAD_FOLDER, imagem.filename)
+        imagem.save(caminho)
+        print(f"Estampa enviada: {imagem.filename}")
+        print(f"Descrição: {descricao}")
+
+        flash("🎉 Estampa enviada com sucesso!")
+    return redirect(url_for('servicos.estamparia'))
 
 @servico_bp.route('/conserto')
 def conserto():

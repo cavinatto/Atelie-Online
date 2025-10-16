@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ <meta charset="utf-8">
+  <title>{% block title %}Ateliê Online{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+  <style>
+    #loading-screen{
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    #loading-screen.hidden { opacity: 0; pointer-events: none; }
+    .loader img {
+      width: 90px;
+      animation: pulse 1.5s infinite;
+    }
+
+     @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+         /* Mensagem de sucesso */
+    .flash-message {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4ade80;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      opacity: 0;
+      animation: fadeInOut 3s ease forwards;
+      z-index: 10000;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(-10px); }
+      10%, 80% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-10px); }
+    }
+  </style>
+
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <!-- Tela de carregamento -->
+  <div id="loading-screen">
+    <div class="loader">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo do Ateliê">
+      <p>Carregando...</p>
+    </div>
+  </div>
+
+  <!-- Mensagem de sucesso -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <div class="flash-message">{{ msg }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <!-- Conteúdo principal -->
+  <div id="content" style="opacity: 0; transition: opacity 0.5s;">
+    {% block content %}{% endblock %}
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-screen");
+      const content = document.getElementById("content");
+      setTimeout(() => {
+        loader.classList.add("hidden");
+        content.style.opacity = 1;
+      }, 800);
+    });
+
+    // Redirecionar após sucesso
+    const flashMsg = document.querySelector(".flash-message");
+    if (flashMsg) {
+      setTimeout(() => {
+        window.location.href = "{{ url_for('servicos.estamparia') }}";
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

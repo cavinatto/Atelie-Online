@@ -16,14 +16,13 @@
       <img src="{{ url_for('static', filename='img/cons3.jpg') }}" alt="Estampa 3">
     </div>
   </div>
-
     <div class="button_center">
     <button class="btn_log_criar" id="prevBtn">&lt;</button>
     <button class="btn_log_criar" id="nextBtn">&gt;</button>
   </div>
 
   <div class="button_center">
-    <a href="#" class="btn_log_criar">Selecionar</a>
+    <a href="{{ url_for('servicos.material') }}" class="btn_log_criar">Material</a>
     <a href="{{ url_for('clientes.index') }}" class="btn_log_criar">Voltar</a>
   </div>
 
