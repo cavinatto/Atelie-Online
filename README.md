@@ -1,6 +1,6 @@
 # 🧵 Ateliê Online
 
-Um sistema online voltado para **ajustes, consertos, customização e estamparia**, oferecendo uma plataforma simples e intuitiva para que clientes possam solicitar serviços diretamente pela internet.
+Um sistema online voltado para **ajustes, consertos, customização e estamparia**, oferecendo uma plataforma simples e intuitiva para que clientes possam solicitar serviços diretamente pela internet. 
 
 ## 📖 Sobre o Projeto
 O **Ateliê Online** tem como objetivo modernizar a forma como ateliês atendem seus clientes, permitindo:
